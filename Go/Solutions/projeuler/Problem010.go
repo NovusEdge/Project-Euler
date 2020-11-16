@@ -7,7 +7,8 @@ import (
 
 /*
 Problem010 answers the problem at : https://projecteuler.net/problem=10
-	* Problem 10:
+
+* Problem 10:
 		Find the sum of all the primes below two million.
 */
 func Problem010() {

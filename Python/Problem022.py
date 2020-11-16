@@ -16,8 +16,10 @@ def getWords():
 
 def main():
     total = 0
-    for i in getWords():
-        total += nameNum(i) * (getWords().index(i) + 1)
+    words = getWords()
+    print(words)
+    for i in range(len(words)):
+        total += nameNum(words[i]) * (i + 1)
     return total
 
 if __name__ == "__main__":

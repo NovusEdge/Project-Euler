@@ -34,4 +34,7 @@ func main() {
 
 	// euler.Problem021() // TODO Re-solve it -_-
 
+	euler.Problem022()
+	euler.Problem023()
+	euler.Problem024()
 }

@@ -8,7 +8,8 @@ import (
 
 /*
 Problem020 answers the problem at : https://projecteuler.net/problem=20
-	* Problem 20:
+
+* Problem 20:
 		Find the sum of the digits in the number 100!
 */
 func Problem020() {

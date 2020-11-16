@@ -9,8 +9,9 @@ import (
 
 /*
 Problem013 answers the problem at : https://projecteuler.net/problem=13
-	* Problem 13:
-		? Work out the first ten digits of the sum of the following one-hundred 50-digit numbers...
+
+* Problem 13:
+		Work out the first ten digits of the sum of the following one-hundred 50-digit numbers...
 */
 func Problem013() {
 

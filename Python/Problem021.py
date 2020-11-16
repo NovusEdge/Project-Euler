@@ -14,6 +14,7 @@ def main():
             if check(i, j):
                 res.append(i)
                 res.append(j)
+                print(res)
             
     return sum(list(dict.fromkeys(res)))
 

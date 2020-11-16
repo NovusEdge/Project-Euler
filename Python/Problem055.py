@@ -11,7 +11,7 @@ def isLychrel(n):
 
 
 start = time()
-ans = sum(1 for i in range(10000) if isLychrel(i))
+ans = len(list(filter(isLychrel, range(10000))))
 
 if __name__=="__main__":
    print(f"\nAnswer: { ans }")
