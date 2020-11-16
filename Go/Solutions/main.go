@@ -21,6 +21,17 @@ func main() {
 	euler.Problem012()
 	euler.Problem013()
 	euler.Problem014()
+
 	//TODO Solve Problem 15 ...
+
 	euler.Problem016()
+
+	//TODO Solve Problem 17
+	//TODO Solve Problem 18
+	//TODO Solve Problem 19
+
+	euler.Problem020()
+
+	// euler.Problem021() // TODO Re-solve it -_-
+
 }
