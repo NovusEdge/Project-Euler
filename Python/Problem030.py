@@ -10,4 +10,3 @@ ans = sum(filter(check, range(10**3, 10**6)))
 if __name__ == '__main__':
     print(f"\nAnswer: { ans }")
     print(f"Time Taken: { time() - start }\n")
-   
