@@ -42,4 +42,8 @@ func main() {
 	//TODO Solve Problem 31 //add : "require github.com/mxschmitt/golang-combinations v1.1.0" to go.mod for combinatorics
 
 	euler.Problem032()
+	euler.Problem033() // Needs Some work :(
+	euler.Problem034()
+
+	euler.Problem035() // Needs Some work :(
 }

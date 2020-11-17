@@ -39,7 +39,7 @@ func Problem032() {
 	}
 
 	end := time.Now()
-	fmt.Printf("\nAnswer to Problem 30 : %d\n", ans)
+	fmt.Printf("\nAnswer to Problem 32 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 
 }
