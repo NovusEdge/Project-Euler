@@ -34,8 +34,7 @@ func Problem017() {
 
 }
 
-//NumberToWord ...
-var NumberToWord = map[int]string{
+var numWords = map[int]string{
 	1:  "one",
 	2:  "two",
 	3:  "three",
@@ -67,15 +66,14 @@ var NumberToWord = map[int]string{
 
 func convert1to99(n int) (w string) {
 	if n < 20 {
-		w = NumberToWord[n]
+		w = numWords[n]
 		return
 	}
-
 	r := n % 10
 	if r == 0 {
-		w = NumberToWord[n]
+		w = numWords[n]
 	} else {
-		w = NumberToWord[n-r] + NumberToWord[r]
+		w = numWords[n-r] + numWords[r]
 	}
 	return
 }
@@ -83,7 +81,7 @@ func convert1to99(n int) (w string) {
 func convert100to999(n int) (w string) {
 	q := n / 100
 	r := n % 100
-	w = NumberToWord[q] + "hundred"
+	w = numWords[q] + "hundred"
 	if r == 0 {
 		return
 	}
@@ -92,10 +90,6 @@ func convert100to999(n int) (w string) {
 }
 
 func convTill1000(n int) (w string) {
-	if n > 1000 || n < 1 {
-		panic("func Convert1to1000: n > 1000 or n < 1")
-	}
-
 	if n < 100 {
 		w = convert1to99(n)
 		return
