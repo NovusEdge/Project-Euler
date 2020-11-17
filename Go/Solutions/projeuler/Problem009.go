@@ -8,7 +8,8 @@ import (
 
 /*
 Problem009 answers the problem at : https://projecteuler.net/problem=9
-	* Problem 9:
+
+* Problem 9:
 		There exists exactly one Pythagorean triplet for which a + b + c = 1000 (a < b < c).
 		Find the product abc.
 */

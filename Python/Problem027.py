@@ -26,9 +26,8 @@ def main():
     for a in range(-1000,1001):
         for b in range(-1000,1000):
             try:
-                maindict[checkQuad(a,b)[0]] = checkQuad(a,b)[1]
-                if maindict[checkQuad(a,b)[0]] > 1:
-                    print(max(maindict))
+                k = checkQuad(a, b)
+                maindict[k[0]] = k[1]
             except:
                 pass
     return maindict[max(maindict)] 

@@ -1,7 +1,8 @@
 from time import time
+from itertools import permutations as perm
 
 start = time()
-ans = ((28433*2**7830457)+1)%(10**10)
+ans = list(map(lambda x: ''.join(x), perm("0123456789", 10)))[999999]
 
 if __name__=="__main__":
     print(f"\nAnswer: { ans }")

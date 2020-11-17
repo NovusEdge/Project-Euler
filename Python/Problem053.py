@@ -1,13 +1,13 @@
 from math import factorial
 from time import time
 
-C = lambda n, r: factorial(n)//(factorial(n-r)*factorial(r))
+C = lambda n, r: factorial(n) // (factorial(n-r) * factorial(r))
 
 def main():
     nums, counter = range(102), 0
     for a in range(0, 101):
         for r in range(0, a+1):
-            if C(a,r)>pow(10,6):
+            if C(a,r) > pow(10, 6):
                 counter += 1
     return counter
 
