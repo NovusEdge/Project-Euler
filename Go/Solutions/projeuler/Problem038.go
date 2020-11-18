@@ -2,7 +2,9 @@ package euler
 
 import (
 	"fmt"
+	"sort"
 	"strconv"
+	"strings"
 	"time"
 )
 
@@ -25,35 +27,30 @@ The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5
 */
 func Problem038() {
 	start := time.Now()
-	maxProd := 1
+	ans := 2
 
-	for i := 1; i < 10000; i++ {
-		temp := getProduct(i)
-		if maxProd < temp {
-			maxProd = temp
+	for i := 2; i < 10000; i++ {
+		temp := panProd(i)
+		if ans < temp {
+			ans = temp
 		}
 	}
 
 	end := time.Now()
-	fmt.Printf("\nAnswer to Problem 38 : %d\n", maxProd)
+	fmt.Printf("\nAnswer to Problem 38 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-func getProduct(n int) int {
-	i := 1
+func panProd(n int) int {
+	i := 0
 	for true {
-		temp := ""
-		for j := 1; j <= i; j++ {
-			k := strconv.Itoa(n * j)
-			temp += k
-		}
+		temp := process(n, i)
 		if len(temp) == 9 {
-			if isPallStr(temp) {
-				p, _ := strconv.Atoi(temp)
-				return p
-			} else {
-				return 0
+			if _pallStr38(temp) {
+				res, _ := strconv.Atoi(temp)
+				return res
 			}
+			return 0
 		}
 		if len(temp) > 9 {
 			return 0
@@ -61,4 +58,21 @@ func getProduct(n int) int {
 		i++
 	}
 	return 0
+}
+
+func process(n, upper int) string {
+	temp := ""
+
+	for i := 1; i <= upper; i++ {
+		temp += strconv.Itoa(n * i)
+	}
+	return temp
+}
+func _pallStr38(s string) bool {
+	k := []string{}
+	for _, i := range s {
+		k = append(k, string(i))
+	}
+	sort.Strings(k)
+	return strings.Join(k, "") == "123456789"
 }

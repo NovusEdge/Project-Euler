@@ -25,7 +25,7 @@ func Problem024() {
 
 	ans := perms[999999]
 	end := time.Now()
-	fmt.Printf("\nAnswer to Problem 23 : %s\n", ans)
+	fmt.Printf("\nAnswer to Problem 24 : %s\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
