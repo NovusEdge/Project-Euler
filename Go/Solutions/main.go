@@ -47,5 +47,6 @@ func main() {
 
 	// euler.Problem035() // Needs Some work :( m8 ffs this takes 1047 seconds to complete...
 	// euler.Problem036()
-	euler.Problem037()
+	// euler.Problem037()
+	euler.Problem038()
 }
