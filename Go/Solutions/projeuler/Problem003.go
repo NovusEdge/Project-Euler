@@ -37,13 +37,13 @@ func Factors(n int64) (res []int64) {
 
 //IsPrime reports if a number is a prime number or not
 func IsPrime(n int64) bool {
-	if n < 1 {
+	if n <= 1 {
 		return false
 	} else if n == 2 {
 		return true
 	}
 	upper := int64(math.Trunc(math.Sqrt(float64(n))))
-	for i := int64(2); i < upper; i++ {
+	for i := int64(2); i <= upper; i++ {
 		if n%i == 0 {
 			return false
 		}

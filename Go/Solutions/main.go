@@ -37,5 +37,18 @@ func main() {
 	// euler.Problem025()
 	// euler.Problem027()
 	// euler.Problem029()
-	euler.Problem030()
+	// euler.Problem030()
+
+	// //TODO Solve Problem 31 //add : "require github.com/mxschmitt/golang-combinations v1.1.0" to go.mod for combinatorics
+
+	// euler.Problem032()
+	// // euler.Problem033() // Needs Some work :(
+	// euler.Problem034()
+
+	// // euler.Problem035() // Needs Some work :( m8 ffs this takes 1047 seconds to complete...
+	// euler.Problem036()
+	// euler.Problem037()
+	// euler.Problem038()
+	// euler.Problem039()
+	euler.Problem040()
 }
