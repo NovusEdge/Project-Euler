@@ -45,12 +45,9 @@ func panProd(n int) int {
 	i := 0
 	for true {
 		temp := process(n, i)
-		if len(temp) == 9 {
-			if _pallStr38(temp) {
-				res, _ := strconv.Atoi(temp)
-				return res
-			}
-			return 0
+		if len(temp) == 9 && _pallStr38(temp) {
+			res, _ := strconv.Atoi(temp)
+			return res
 		}
 		if len(temp) > 9 {
 			return 0
@@ -68,6 +65,8 @@ func process(n, upper int) string {
 	}
 	return temp
 }
+
+//_pallStr38 checks for 1-9 pallindrome
 func _pallStr38(s string) bool {
 	k := []string{}
 	for _, i := range s {
