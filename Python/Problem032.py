@@ -1,5 +1,5 @@
 from time import time
-isPan = lambda n: sorted(n) == list("123456789")
+isPan = lambda n: sorted(n) == ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 
 def main():
