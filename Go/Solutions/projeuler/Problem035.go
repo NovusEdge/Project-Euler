@@ -19,18 +19,10 @@ How many circular primes are there below one million?
 */
 func Problem035() {
 	start := time.Now()
-
-	primeMap := _makePrimeMap()
 	ans := len(primeMap)
 	for i := range primeMap {
-		k := len(strconv.Itoa(i))
-		m := i
-		for j := 0; j < k; j++ {
-			_, ok := primeMap[m]
-			if !ok {
-				break
-			}
-			m = rotate(m)
+		if !check35(i) {
+			ans--
 		}
 	}
 
@@ -39,6 +31,8 @@ func Problem035() {
 	fmt.Printf("\nAnswer to Problem 35 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
+
+var primeMap = _makePrimeMap()
 
 func rotate(n int) int {
 	s := strconv.Itoa(n)
@@ -60,4 +54,18 @@ func _makePrimeMap() map[int]bool {
 		res[i] = true
 	}
 	return res
+}
+
+func check35(n int) bool {
+	k := len(strconv.Itoa(n))
+	primeMap := _makePrimeMap()
+	temp := rotate(n)
+	for j := 0; j < k-1; j++ {
+		_, t := primeMap[temp]
+		if !t {
+			return false
+		}
+		temp = rotate(temp)
+	}
+	return true
 }

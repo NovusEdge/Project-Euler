@@ -27,6 +27,7 @@ while counter < 11:
     if isTrunc_R(i) and isTrunc_L(i):
         ans += i
         counter += 1
+        print(i)
     i += 1
 
 if __name__=="__main__":
