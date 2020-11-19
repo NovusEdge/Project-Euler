@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"strconv"
 	"time"
 )
 
@@ -20,20 +19,17 @@ It can be seen that the 12th digit of the fractional part is 1.
 If d(n) represents the nth digit of the fractional part, find the value of the following expression.
 
 d(1) × d(10) × d(100) × d(1000) × d(10000) × d(100000) × d(1000000)
-
 */
 func Problem040() {
 	start := time.Now()
-	c := ""
+	c := []int{}
 
-	for i := 0; i <= 200000; i++ {
-		k := fmt.Sprintf("%d", i)
-		c += k
+	for i := 0; i < 200000; i++ {
+		c = append(c, Digits(i)...)
 	}
 
 	d40 := func(n int) int {
-		res, _ := strconv.Atoi(string(c[n]))
-		return res
+		return c[n]
 	}
 
 	ans := d40(1) * d40(10) * d40(100) * d40(1000) * d40(10000) * d40(100000) * d40(1000000)
