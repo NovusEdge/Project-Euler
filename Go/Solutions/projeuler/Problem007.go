@@ -23,26 +23,3 @@ func Problem007() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-//PrimeSieve implements the sieve of Eratosthenes
-func PrimeSieve(n int) []int {
-	integers := make([]bool, n+1)
-	for i := 2; i < n+1; i++ {
-		integers[i] = true
-	}
-
-	for p := 2; p*p <= n; p++ {
-		if integers[p] == true {
-			for i := p * 2; i <= n; i += p {
-				integers[i] = false
-			}
-		}
-	}
-
-	var primes []int
-	for p := 2; p <= n; p++ {
-		if integers[p] == true {
-			primes = append(primes, p)
-		}
-	}
-	return primes
-}

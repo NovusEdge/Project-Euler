@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"strconv"
 	"time"
 )
 
@@ -33,28 +32,4 @@ func Problem037() {
 	end := time.Now()
 	fmt.Printf("\nAnswer to Problem 37 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-func isTruncL(n int64) bool {
-	s := []byte(strconv.FormatInt(n, 10))
-
-	for i := 0; i < len(s); i++ {
-		k, _ := strconv.Atoi(string(s[i:]))
-		if !IsPrime(int64(k)) {
-			return false
-		}
-	}
-	return true
-}
-
-func isTruncR(n int64) bool {
-	s := []byte(strconv.FormatInt(n, 10))
-
-	for i := len(s); i > 0; i-- {
-		k, _ := strconv.Atoi(string(s[:i]))
-		if !IsPrime(int64(k)) {
-			return false
-		}
-	}
-	return true
 }

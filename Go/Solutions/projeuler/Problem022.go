@@ -2,9 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"io/ioutil"
-	"sort"
-	"strings"
 	"time"
 )
 
@@ -21,26 +18,9 @@ Problem022 answers the problem at : https://projecteuler.net/problem=22
 func Problem022() {
 
 	start := time.Now()
-	ans := get22()
+	ans := getAns22()
 	end := time.Now()
 
 	fmt.Printf("\nAnswer to Problem 21 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-func numScore(name string) (res int) {
-	for _, i := range []rune(name) {
-		res += int(i) - 64
-	}
-	return
-}
-
-func get22() (res int) {
-	nameFile, _ := ioutil.ReadFile("p022_names.txt")
-	names := strings.Split(string(nameFile[:]), ",")
-	sort.Strings(names)
-	for i := 0; i < len(names); i++ {
-		res += numScore(names[i][1:len(names[i])-1]) * (i + 1)
-	}
-	return
 }

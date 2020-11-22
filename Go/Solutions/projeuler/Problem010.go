@@ -21,10 +21,3 @@ func Problem010() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-//Sum reports the sum of all elements of [arr]
-func Sum(arr []int) (s int) {
-	for _, i := range arr {
-		s += i
-	}
-	return
-}

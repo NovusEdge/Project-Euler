@@ -37,26 +37,3 @@ func Problem027() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-func formQuad(a, b int) (int, string) {
-	counter, i := 0, 0
-	for true {
-		exprn := i*i + a*i + b
-		if IsPrime(int64(exprn)) {
-			counter++
-			i++
-		} else {
-			return counter, fmt.Sprintf("n**2 + %dn + %d", a, b)
-		}
-	}
-	return 0, ""
-}
-
-func dictMax(m map[int]string) int {
-	flag := 0
-	for k := range m {
-		if k > flag {
-			flag = k
-		}
-	}
-	return flag
-}

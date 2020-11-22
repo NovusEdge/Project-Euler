@@ -29,7 +29,7 @@ Problem012 answers the problem at : https://projecteuler.net/problem=12
 func Problem012() {
 
 	start := time.Now()
-	ans := get12()
+	ans := getAns12()
 	end := time.Now()
 
 	fmt.Printf("\nAnswer to Problem 12 : %d\n", ans)
@@ -37,19 +37,3 @@ func Problem012() {
 
 }
 
-func highTriangle(n int64) bool {
-	return len(Factors(n)) > 500
-}
-
-//TriangleNum reports the nth triangle number
-func TriangleNum(n int64) int64 {
-	return n * (n + 1) / 2
-}
-
-func get12() int64 {
-	var i int64 = 1
-	for !highTriangle(TriangleNum(i)) {
-		i++
-	}
-	return TriangleNum(i)
-}

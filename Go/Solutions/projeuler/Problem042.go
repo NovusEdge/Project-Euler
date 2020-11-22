@@ -22,8 +22,8 @@ By converting each letter in a word to a number corresponding to its alphabetica
 Using **words.txt** (right click and 'Save Link/Target As...'), a 16K text file containing nearly two-thousand common English words, how many are triangle words?
 */
 func Problem042() {
-
 	start, ans := time.Now(), 0
+
 	TNums := genTriSeq()
 	fileObj, _ := ioutil.ReadFile("./p042_words.txt")
 	data := strings.Split(string(fileObj), `,`)
@@ -37,47 +37,7 @@ func Problem042() {
 	}
 
 	end := time.Now()
-	fmt.Printf("\nAnswer to Problem 41 : %d\n", ans)
+	fmt.Printf("\nAnswer to Problem 42 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 
-}
-
-func trimQuotes(data *[]string) {
-	for i := 0; i < len(*data); i++ {
-		p := (*data)[i]
-		(*data)[i] = p[1 : len(p)-1]
-	}
-}
-
-func mapToScore(data []string) (res []int64) {
-	for _, i := range data {
-		res = append(res, int64(numScore(i)))
-	}
-	return
-}
-
-func genTriSeq() (res []int64) {
-	for i := 1; i < 1000; i++ {
-		res = append(res, TriangleNum(int64(i)))
-	}
-	return
-}
-
-func binarySearch(a []int64, search int64) (result int, searchCount int) {
-	mid := len(a) / 2
-	switch {
-	case len(a) == 0:
-		result = -1
-	case a[mid] > search:
-		result, searchCount = binarySearch(a[:mid], search)
-	case a[mid] < search:
-		result, searchCount = binarySearch(a[mid+1:], search)
-		if result >= 0 {
-			result += mid + 1
-		}
-	default:
-		result = mid
-	}
-	searchCount++
-	return
 }

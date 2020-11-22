@@ -21,18 +21,3 @@ func Problem006() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-func squareSum(n int) int {
-	k := 0
-	for i := 1; i <= n; i++ {
-		k += i * i
-	}
-	return k
-}
-
-func sumSquare(n int) int {
-	k := 0
-	for i := 1; i <= n; i++ {
-		k += i
-	}
-	return k * k
-}
