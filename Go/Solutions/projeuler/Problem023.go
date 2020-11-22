@@ -48,20 +48,3 @@ func Problem023() {
 
 }
 
-func isAbundant(n int) bool {
-	var res int64
-	k := Factors(int64(n))
-	for _, i := range k {
-		res += i
-	}
-	return res-int64(n) > int64(n)
-}
-
-func getAbundant() (res []int) {
-	for i := 1; i < 28124; i++ {
-		if isAbundant(i) {
-			res = append(res, i)
-		}
-	}
-	return
-}

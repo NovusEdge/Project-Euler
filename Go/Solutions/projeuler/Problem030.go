@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"strconv"
 	"time"
 )
 
@@ -37,21 +36,4 @@ func Problem030() {
 	fmt.Printf("\nAnswer to Problem 30 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 
-}
-
-//Digits returns an array of digits of [n]
-func Digits(n int) (res []int) {
-	numStr := strconv.Itoa(n)
-	for _, i := range numStr {
-		k, _ := strconv.Atoi(string(i))
-		res = append(res, k)
-	}
-	return
-}
-
-func fifthPowSum(digits []int) (res int) {
-	for _, i := range digits {
-		res += i * i * i * i * i
-	}
-	return
 }

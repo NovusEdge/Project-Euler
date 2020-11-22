@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"math"
 	"time"
 )
 
@@ -30,29 +29,4 @@ func Problem004() {
 
 	fmt.Printf("\nAnswer to Problem 4 : %d\n", Max(tempArr))
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-//IsPall checks if a number is a pallindrome
-func IsPall(n int) bool {
-	s := fmt.Sprintf("%d", int(math.Abs(float64(n))))
-	return s == Reverse(s)
-}
-
-//Reverse returns a reversed string of [s]
-func Reverse(s string) (ret string) {
-	for _, v := range s {
-		defer func(r rune) { ret += string(r) }(v)
-	}
-	return
-}
-
-//Max reports the max-element in [arr]
-func Max(arr []int) int {
-	flagInt := arr[0]
-	for _, i := range arr {
-		if i > flagInt {
-			flagInt = i
-		}
-	}
-	return flagInt
 }

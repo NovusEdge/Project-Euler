@@ -2,9 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"sort"
-	"strconv"
-	"strings"
 	"time"
 )
 
@@ -39,39 +36,4 @@ func Problem038() {
 	end := time.Now()
 	fmt.Printf("\nAnswer to Problem 38 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-func panProd(n int) int {
-	i := 0
-	for true {
-		temp := process(n, i)
-		if len(temp) == 9 && _pallStr38(temp) {
-			res, _ := strconv.Atoi(temp)
-			return res
-		}
-		if len(temp) > 9 {
-			return 0
-		}
-		i++
-	}
-	return 0
-}
-
-func process(n, upper int) string {
-	temp := ""
-
-	for i := 1; i <= upper; i++ {
-		temp += strconv.Itoa(n * i)
-	}
-	return temp
-}
-
-//_pallStr38 checks for 1-9 pallindrome
-func _pallStr38(s string) bool {
-	k := []string{}
-	for _, i := range s {
-		k = append(k, string(i))
-	}
-	sort.Strings(k)
-	return strings.Join(k, "") == "123456789"
 }

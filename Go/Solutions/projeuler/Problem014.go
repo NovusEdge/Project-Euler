@@ -32,35 +32,3 @@ func Problem014() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-func collatz(n int) []int {
-	resArr := []int{n}
-	i := n
-	for i > 1 {
-		if i%2 == 0 {
-			i = i / 2
-		} else {
-			i = 3*i + 1
-		}
-		resArr = append(resArr, i)
-	}
-	return resArr
-}
-
-func getAllSeq() (resArr []int) {
-	for i := 2; i < 1000000; i++ {
-		resArr = append(resArr, len(collatz(i)))
-	}
-	return
-}
-
-func getMaxFromSeq(arr []int) int {
-	flagLen := len(collatz(2))
-	flagElem := 2
-	for i := 0; i < len(arr); i++ {
-		if arr[i] > flagLen {
-			flagElem = i + 2
-			flagLen = arr[i]
-		}
-	}
-	return flagElem
-}

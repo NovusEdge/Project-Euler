@@ -2,9 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"sort"
-	"strconv"
-	"strings"
 	"time"
 )
 
@@ -28,7 +25,7 @@ func Problem032() {
 
 	for i := 1; i < 2000; i++ {
 		for j := 1; j < 2000; j++ {
-			temp, _ := strconv.Atoi(fmt.Sprintf("%d%d%d", i, j, i*j))
+			temp := fmt.Sprintf("%d%d%d", i, j, i*j)
 			if _isPandigital(temp) {
 				resmap[i*j] = 1
 			}
@@ -42,15 +39,4 @@ func Problem032() {
 	fmt.Printf("\nAnswer to Problem 32 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 
-}
-
-func _isPandigital(n int) bool {
-	k := "123456789"
-	ref := _makeNumStr(n)
-	sort.Strings(ref)
-	return k == strings.Join(ref, "")
-}
-
-func _makeNumStr(n int) []string {
-	return strings.Split(strconv.Itoa(n), "")
 }

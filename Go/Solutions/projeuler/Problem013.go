@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"math/big"
 	"strings"
 	"time"
 )
@@ -16,21 +15,11 @@ Problem013 answers the problem at : https://projecteuler.net/problem=13
 func Problem013() {
 
 	start := time.Now()
-	ans := get13(strings.Split(numStr, "\n"))
+	ans := getAns13(strings.Split(numStr, "\n"))
 	end := time.Now()
 
 	fmt.Printf("\nAnswer to Problem 13 : %s\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-func get13(arr []string) string {
-	res := big.NewInt(0)
-	var temp big.Int
-	for i := 0; i < len(arr); i++ {
-		intObj, _ := temp.SetString(arr[i], 10)
-		res.Add(res, intObj)
-	}
-	return res.String()[:10]
 }
 
 var numStr = `37107287533902102798797998220837590246510135740250

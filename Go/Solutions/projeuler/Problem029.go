@@ -37,8 +37,8 @@ func Problem029() {
 		return temp
 	}
 	nums := []*big.Int{}
-	start := time.Now()
 
+	start := time.Now()
 	for i := 2; i < 101; i++ {
 		for j := 2; j < 101; j++ {
 			nums = append(nums, pow(int64(i), int64(j)))
@@ -51,18 +51,3 @@ func Problem029() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-func pow(i, j int64) (res *big.Int) {
-	a := big.NewInt(i)
-	b := big.NewInt(j)
-	res = a.Exp(a, b, nil)
-	return
-}
-
-func inArr(arr []*big.Int, e *big.Int) bool {
-	for _, i := range arr {
-		if i.Cmp(e) == 0 {
-			return true
-		}
-	}
-	return false
-}
