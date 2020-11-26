@@ -19,5 +19,4 @@ func Problem003() {
 
 	fmt.Printf("\nAnswer to Problem 3 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-
 }
