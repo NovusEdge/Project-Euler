@@ -21,17 +21,16 @@ Problem021 answers the problem at : https://projecteuler.net/problem=21
 */
 func Problem021() {
 	start := time.Now()
+	ans := 0
 
 	for i := 1; i < 10000; i++ {
-		for j := 1; j < i+1; j++ {
+		for j := 1; j <= i; j++ {
 			if isAmicablePair(i, j) {
-				_amicableNums = append(_amicableNums, i, j)
-				fmt.Println(_amicableNums)
+				ans += (i + j)
 			}
 		}
 	}
 
-	ans := Sum(getUnique(_amicableNums))
 	end := time.Now()
 
 	fmt.Printf("\nAnswer to Problem 21 : %d\n", ans)
@@ -43,23 +42,12 @@ func isAmicablePair(a, b int) bool {
 }
 
 func d(n int) (res int) {
-	upper := int(math.Sqrt(math.Abs(float64(n))))
-	for i := 1; i < upper; i++ {
+	upper := int(math.Sqrt(float64(n)))
+	for i := 1; i <= upper; i++ {
 		if n%i == 0 {
-			res += i
-			res += n / i
+			res += i + (n / i)
 		}
 	}
-	return
-}
-
-func getUnique(arr []int) (res []int) {
-	occured := map[int]bool{}
-	for e := range arr {
-		if occured[arr[e]] != true {
-			occured[arr[e]] = true
-			res = append(res, arr[e])
-		}
-	}
+	res -= n
 	return
 }

@@ -3,7 +3,6 @@ package euler
 import (
 	"fmt"
 	"math/big"
-	"strconv"
 	"time"
 )
 
@@ -24,17 +23,4 @@ func Problem016() {
 
 	fmt.Printf("\nAnswer to Problem 16 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-/*
-DigitalRoot : Returns the sum of all digits of a number
-*/
-func DigitalRoot(n *big.Int) int64 {
-	numStr := n.String()
-	res := 0
-	for _, i := range numStr {
-		j, _ := strconv.Atoi(string(i))
-		res += j
-	}
-	return int64(res)
 }

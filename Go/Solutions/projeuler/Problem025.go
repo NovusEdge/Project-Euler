@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"math/big"
 	"time"
 )
 
@@ -46,37 +45,4 @@ func Problem025() {
 
 	fmt.Printf("\nAnswer to Problem 25 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-/*
-Fibonacci :Reports the nth term in the fibonacci series
-
-* Fibonacci(0) --> 1
-
-* Fibonacci(1) --> 1
-
-* Fibonacci(2) --> 2
-
-* ...
-*/
-func Fibonacci(n int64) *big.Int {
-	if n == 0 || n == 1 {
-		return big.NewInt(1)
-	}
-	a := big.NewInt(0)
-	b := big.NewInt(1)
-	limit := big.NewInt(n)
-	i := big.NewInt(0)
-
-	for i.Cmp(limit) < 0 {
-		a.Add(a, b)
-		a, b = b, a
-		i.Add(i, big.NewInt(1))
-	}
-	return a
-}
-
-func numLen(n *big.Int) int {
-	k := n.String()
-	return len(k)
 }

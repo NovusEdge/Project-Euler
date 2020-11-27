@@ -35,21 +35,3 @@ func Problem039() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-func getTriSol(p int) int {
-	soln := 0
-
-	for i := 1; i < 400; i++ {
-		for j := 1; j < 400; j++ {
-			k := p - i - j
-			if _isIntRT(i, j, k) && k > 0 {
-				soln++
-			}
-		}
-	}
-	return soln
-}
-
-// checks if a triangle with sides, a, b, c (c as the hypotenuse) is a right triangle (integer right triangle)
-func _isIntRT(a, b, c int) bool {
-	return c*c == a*a+b*b && a < b && b < c
-}

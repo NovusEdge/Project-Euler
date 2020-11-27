@@ -29,7 +29,7 @@ func main() {
 	//TODO Solve Problem 19
 
 	euler.Problem020()
-	// euler.Problem021() // TODO Re-solve it -_-
+	// euler.Problem021() // TODO Try optimizing this one, *takes 40 secs to complete...*
 
 	euler.Problem022()
 	euler.Problem023()
@@ -39,7 +39,7 @@ func main() {
 	euler.Problem029()
 	euler.Problem030()
 
-	//TODO Solve Problem 31 //add : "require github.com/mxschmitt/golang-combinations v1.1.0" to go.mod for combinatorics
+	// //TODO Solve Problem 31 //add : "require github.com/mxschmitt/golang-combinations v1.1.0" to go.mod for combinatorics
 
 	euler.Problem032()
 	// euler.Problem033() // Needs Some work :(
@@ -53,4 +53,5 @@ func main() {
 	euler.Problem040()
 	euler.Problem041()
 	euler.Problem042()
+
 }

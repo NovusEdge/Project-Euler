@@ -30,19 +30,3 @@ func Problem034() {
 	fmt.Printf("\nAnswer to Problem 34 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
-
-func _fact34(n int) (res int) {
-	res = 1
-	for i := 2; i <= n; i++ {
-		res *= i
-	}
-	return
-}
-
-func check34(n int) bool {
-	temp := 0
-	for _, i := range Digits(n) {
-		temp += _fact34((i))
-	}
-	return temp == n
-}

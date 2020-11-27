@@ -34,17 +34,3 @@ func Problem036() {
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
 
-func isPallStr(s string) bool {
-	return s == _reverse(s)
-}
-
-func _reverse(s string) (ret string) {
-	for _, v := range s {
-		defer func(r rune) { ret += string(r) }(v)
-	}
-	return
-}
-
-func bin(n int64) string {
-	return strconv.FormatInt(n, 2)
-}

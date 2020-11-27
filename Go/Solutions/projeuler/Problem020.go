@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"math/big"
 	"time"
 )
 
@@ -19,9 +18,4 @@ func Problem020() {
 
 	fmt.Printf("\nAnswer to Problem 20 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-//Factorial reports the factorial of a number
-func Factorial(n int64) *big.Int {
-	return big.NewInt(1).MulRange(2, n)
 }

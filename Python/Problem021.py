@@ -7,16 +7,14 @@ def d(n):
                 
 def main():
     check = lambda a, b : d(a) == b and d(b) == a and a != b
-    res = [  ]
+    ans = 0
     
     for i in range(1, 10000):
         for j in range(1, i+1):
             if check(i, j):
-                res.append(i)
-                res.append(j)
-                print(res)
+                ans += i+j
             
-    return sum(list(dict.fromkeys(res)))
+    return ans
 
 if __name__ == "__main__":
   start = time()

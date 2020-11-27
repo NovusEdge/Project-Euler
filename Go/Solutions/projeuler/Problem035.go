@@ -2,9 +2,10 @@ package euler
 
 import (
 	"fmt"
-	"strconv"
 	"time"
 )
+
+var primeMap = _makePrimeMap()
 
 /*
 Problem035 answers the problem at : https://projecteuler.net/problem=35
@@ -19,53 +20,15 @@ How many circular primes are there below one million?
 */
 func Problem035() {
 	start := time.Now()
-	ans := len(primeMap)
+	ans := 0
 	for i := range primeMap {
-		if !check35(i) {
-			ans--
+		if check35(i) {
+			ans++
+			fmt.Println(i)
 		}
 	}
 
 	end := time.Now()
-
 	fmt.Printf("\nAnswer to Problem 35 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-var primeMap = _makePrimeMap()
-
-func rotate(n int) int {
-	s := strconv.Itoa(n)
-	first := rune(s[0])
-	chars := []rune(s)
-	for i := 0; i < len(s)-1; i++ {
-		chars[i] = chars[i+1]
-	}
-	chars[len(chars)-1] = first
-
-	p, _ := strconv.Atoi(string(chars))
-	return p
-}
-
-func _makePrimeMap() map[int]bool {
-	primes := PrimeSieve(1000000)
-	res := make(map[int]bool)
-	for _, i := range primes {
-		res[i] = true
-	}
-	return res
-}
-
-func check35(n int) bool {
-	k := len(strconv.Itoa(n))
-	primeMap := _makePrimeMap()
-	temp := rotate(n)
-	for j := 0; j < k-1; j++ {
-		_, t := primeMap[temp]
-		if !t {
-			return false
-		}
-		temp = rotate(temp)
-	}
-	return true
 }
