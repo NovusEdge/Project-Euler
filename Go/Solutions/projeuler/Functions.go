@@ -767,3 +767,18 @@ func binarySearch(a []int64, search int64) (result int, searchCount int) {
 	searchCount++
 	return
 }
+
+/* Reports the nth **Triangle** number */
+func tNum(n int64) int64 {
+	return n * (n + 1) / 2
+}
+
+/* Reports the nth **Pentagonal** number */
+func pNum(n int64) int64 {
+	return n * (3*n - 1) / 2
+}
+
+/* Reports the nth **Hexagonal** number */
+func hNum(n int64) int64 {
+	return n * (2*n - 1)
+}
