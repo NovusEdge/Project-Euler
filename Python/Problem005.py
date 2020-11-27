@@ -1,11 +1,11 @@
 from time import time
+from math import gcd
 from functools import reduce
-from itertools import starmap
 
-check = lambda n: all(map(lambda l: l[1]==0, starmap(int.__divmod__, zip([n]*20, range(2, 21)))))
-start = time() 
-ans = 2520
-while not check(ans): ans += 10
+lcm = lambda a, b: a*b//gcd(a, b)
+
+start = time()
+ans = reduce(lcm, range(1, 21))
 
 if __name__ == '__main__':
     print(f"Answer: { ans }")
