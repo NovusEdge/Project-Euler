@@ -30,7 +30,7 @@ pSieve = primeSieve(1_000_001)
 def phi(n):
     prodt = reduce(float.__mul__, [1-(1/pSieve[i]) for i in range(n)])
     return ceil(n*prodt)
-
+# https://en.wikipedia.org/wiki/Euler%27s_totient_function
 for i in range(1, 10):
     print(phi(i))
 # needs work ...
