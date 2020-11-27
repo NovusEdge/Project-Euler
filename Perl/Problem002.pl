@@ -6,7 +6,7 @@ sub f_nthTerm {
         ($a, $b) = ($b, $a);
     }
     return $a;
-}
+} # yes I could've used the formula for the general term of the fibonacci series, will do that...
 
 
 $start  = time();
@@ -21,7 +21,7 @@ while ($k < 4000000){
 
 $exc_time = time() - $start;
 print "Answer: $ans\n";
-print "Time Taken: $exc_time\n";
+print "Time Taken: $exc_time seconds\n";
 
 # just for reference -_-
 # sub fibonacci {
