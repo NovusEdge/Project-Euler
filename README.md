@@ -7,10 +7,10 @@ A good ol' repository for project-euler solutions
 
 ## About
 This reporsitory was created (initially) in light of the ProjectEuler100 challange, but quickly turned into a general repository for all solutions.
-
 * Project Euler: https://projecteuler.net/about
-* Problems: https://projecteuler.net/archives# Project-Euler-100 
-A good ol' repository for project-euler solutions
+* Problems: https://projecteuler.net/archives
+* Back to index: [Index](#index)
+
 
 ## Code Format
 
@@ -32,9 +32,10 @@ start = time() # to keep timestamp of when the processes started
 ...
 
 if __main__ == "__name__":
-    print(f"Answer: { answer_var }")
+    print(f"Answer: { ans }")
     print(f"Time Taken: { time() - start }")
 ```
+
 * Back To Contents: [Contents](#contents)
 
 #### Go:
@@ -65,6 +66,7 @@ func Problem...(){
 }
 ```
 Another thing to mention is that all helper functions are contained within `Functions.go` in package `euler` i.e. `Go/Solutions/projeuler`, and text/data files required to solve certain problems are in `Go/Solutions`.
+
 * Back To Contents: [Contents](#contents)
 
 #### Perl:
