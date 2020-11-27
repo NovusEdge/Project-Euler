@@ -10,8 +10,7 @@ start = time()
 pLis, i = [], 2
 
 while len(pLis) < 10001:
-    if prime(i):
-        pLis.append(i)
+    if prime(i): pLis.append(i)
     i += 1
     
 ans = pLis[-1]
