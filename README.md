@@ -2,7 +2,7 @@
 A good ol' repository for project-euler solutions
 
 ## Index:
-    *About
-    *Code Format
+    * [About](#about)
+    * [Code Format]
 
-# About
+## About
