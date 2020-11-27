@@ -25,12 +25,12 @@ This reporsitory was created (initially) in light of the ProjectEuler100 challan
 
 ## Code Format
 
-###Index:
+### Index:
   - [Python](#python)
   - [Go](#go)
   - [Perl](#perl)
 
-####Python:
+#### Python:
 * Most of the `python` code is written in a format similar to the following:
 ```py
 from time import time
@@ -43,11 +43,11 @@ start = time() # to keep timestamp of when the processes started
 ...
 
 if __main__ == "__name__":
-    print(f"Answer: { ans }")
+    print(f"Answer: { answer_var }")
     print(f"Time Taken: { time() - start }")
 ```
 
-####Go:
+#### Go:
 * Most of the `go` code is written in a format similar to the following:
 ```go
 package euler
@@ -76,7 +76,7 @@ func Problem...(){
 ```
 Another thing to mention is that all helper functions are contained within `Functions.go` in package `euler` i.e. `Go/Solutions/projeuler`, and text/data files required to solve certain problems are in `Go/Solutions`.
 
-####Perl:
+#### Perl:
 * Most of the `perl` code is written in a format similar to the following:
 ```perl
 $start = time(); # timestamp of when the processes started...
