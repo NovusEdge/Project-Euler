@@ -14,7 +14,7 @@ def primeSieve(n):
 
 start = time() 
 ans = 0
-pSieve = primeSieve(10**6)
+pSieve = primeSieve(1000000)
 
 
 if __name__ == '__main__':

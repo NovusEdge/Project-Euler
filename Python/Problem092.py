@@ -1,27 +1,36 @@
 from time import time
-from math import factorial
+from math import factorial as fact
 from itertools import combinations_with_replacement as cwr
 
 digitSquare = lambda n: sum([i**2 for i in map(int, str(n))])
 
-def getSquareChain( n ):
-    temp, chain = n, [ n ]
+def checkChain( n ):
+    temp = n
     while True:
         temp = digitSquare( temp )
-        chain.append( temp )
-        if temp == 1 or temp == 89 or temp == 0:
-            chain.append(temp)
-            return chain
+        
+        if temp == 89: 
+            return True
+        if temp == 1 or temp == 0: 
+            return False
 
 start = time()
 numRef = '1234567890'
-combs = list(cwr(numRef, 8)) # needs work ...
-combs = map(lambda x: int(''.join(sorted(x))), combs)
-combs = list(filter(lambda x: getSquareChain(x)[-1]==89, combs))
-ans = len(combs)
+counter = 0
+combLis = []
+for i in range(1, 10):
+    if i < 8:
+        combs = cwr(numRef, i)
+    else: combs = cwr(numRef, 8)
+    counter = int(fact(len(numRef[:i])+i-1) / fact(i) / fact(len(numRef[:i])-1)) * len(numRef[:i])
+    
+# ans = sum(map(lambda x: fact(len(str(x))), filter(checkChain, combLis)))
+# # (n+r-1)! / r! / (n-1)!
 
 if __name__ == '__main__':
-    print(f"Answer: { ans }")
+    print(f"Answer: { counter }")
     print(f"Time Taken: { time() - start }")
+
 # 8581146
+# 469804167
 # 538063582
