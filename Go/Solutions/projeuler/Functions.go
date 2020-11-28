@@ -87,23 +87,25 @@ func Max(arr []int) int {
 	return flagInt
 }
 
-//to get the answer for problem 5
-func getAns5(a *int) {
-	i := 2
-	for !divCheck(i) {
-		i++
+//GCD : greatest common divisor (GCD) via Euclidean algorithm
+func GCD(a, b int) int {
+	for b != 0 {
+		t := b
+		b = a % b
+		a = t
 	}
-	*a = i
+	return a
 }
 
-// helper function to check for even divisibility in problem 5
-func divCheck(n int) bool {
-	for i := 2; i < 21; i++ {
-		if n%i != 0 {
-			return false
-		}
+//LCM : find Least Common Multiple (LCM) via GCD
+func LCM(a, b int, integers ...int) int {
+	result := a * b / GCD(a, b)
+
+	for i := 0; i < len(integers); i++ {
+		result = LCM(result, integers[i])
 	}
-	return true
+
+	return result
 }
 
 // reports the sum of the first *n* squares (used in problem 6)
@@ -459,11 +461,25 @@ func inArr(arr []*big.Int, e *big.Int) bool {
 }
 
 //Digits returns an array of digits of [n]
+// func Digits(n int) (res []int) {
+// 	numStr := strconv.Itoa(n)
+// 	for _, i := range numStr {
+// 		k, _ := strconv.Atoi(string(i))
+// 		res = append(res, k)
+// 	}
+// 	return
+// }
+
+//Digits returns an array of digits of [n]
 func Digits(n int) (res []int) {
-	numStr := strconv.Itoa(n)
-	for _, i := range numStr {
-		k, _ := strconv.Atoi(string(i))
-		res = append(res, k)
+	temp := n
+	for temp > 0 {
+		res = append(res, temp%10)
+		temp /= 10
+	}
+
+	for i, j := 0, len(res)-1; i < j; i, j = i+1, j-1 {
+		res[i], res[j] = res[j], res[i]
 	}
 	return
 }
@@ -781,4 +797,33 @@ func pNum(n int64) int64 {
 /* Reports the nth **Hexagonal** number */
 func hNum(n int64) int64 {
 	return n * (2*n - 1)
+}
+
+/* Checks if 2 numbers have the same digits (used in problem 52) */
+func sameDigits(a int, b int) bool {
+	a1 := Digits(a)
+	b1 := Digits(b)
+
+	if len(a1) != len(b1) {
+		return false
+	}
+
+	sort.Ints(a1[:])
+	sort.Ints(b1[:])
+
+	for i := 0; i < len(a1); i++ {
+		if a1[i] != b1[i] {
+			return false
+		}
+
+	}
+	return true
+}
+
+//C reports the number of combinations i.e. nCr
+func C(n, r int) *big.Int {
+	t1, t2, t3 := Factorial(int64(n)), Factorial(int64(r)), Factorial(int64(n-r))
+	t2.Mul(t2, t3)
+	res := t1.Div(t1, t2)
+	return res
 }
