@@ -87,23 +87,25 @@ func Max(arr []int) int {
 	return flagInt
 }
 
-//to get the answer for problem 5
-func getAns5(a *int) {
-	i := 2
-	for !divCheck(i) {
-		i++
+//GCD : greatest common divisor (GCD) via Euclidean algorithm
+func GCD(a, b int) int {
+	for b != 0 {
+			t := b
+			b = a % b
+			a = t
 	}
-	*a = i
+	return a
 }
 
-// helper function to check for even divisibility in problem 5
-func divCheck(n int) bool {
-	for i := 2; i < 21; i++ {
-		if n%i != 0 {
-			return false
-		}
+//LCM : find Least Common Multiple (LCM) via GCD
+func LCM(a, b int, integers ...int) int {
+	result := a * b / GCD(a, b)
+
+	for i := 0; i < len(integers); i++ {
+			result = LCM(result, integers[i])
 	}
-	return true
+
+	return result
 }
 
 // reports the sum of the first *n* squares (used in problem 6)
