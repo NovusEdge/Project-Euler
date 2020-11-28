@@ -48,6 +48,6 @@ func Problem045() {
 	ans = int(common[ans+1])
 
 	end := time.Now()
-	fmt.Printf("\nAnswer to Problem 39 : %d\n", ans)
+	fmt.Printf("\nAnswer to Problem 45 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }

@@ -15,12 +15,12 @@ Problem005 answers the problem at : https://projecteuler.net/problem=5
 */
 func Problem005() {
 
-	var ans int
 	start := time.Now()
-	getAns5(&ans)
+
+	ans := LCM(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+
 	end := time.Now()
 
 	fmt.Printf("\nAnswer to Problem 5 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
-
