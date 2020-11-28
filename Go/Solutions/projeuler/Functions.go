@@ -90,9 +90,9 @@ func Max(arr []int) int {
 //GCD : greatest common divisor (GCD) via Euclidean algorithm
 func GCD(a, b int) int {
 	for b != 0 {
-			t := b
-			b = a % b
-			a = t
+		t := b
+		b = a % b
+		a = t
 	}
 	return a
 }
@@ -102,7 +102,7 @@ func LCM(a, b int, integers ...int) int {
 	result := a * b / GCD(a, b)
 
 	for i := 0; i < len(integers); i++ {
-			result = LCM(result, integers[i])
+		result = LCM(result, integers[i])
 	}
 
 	return result
@@ -461,11 +461,25 @@ func inArr(arr []*big.Int, e *big.Int) bool {
 }
 
 //Digits returns an array of digits of [n]
+// func Digits(n int) (res []int) {
+// 	numStr := strconv.Itoa(n)
+// 	for _, i := range numStr {
+// 		k, _ := strconv.Atoi(string(i))
+// 		res = append(res, k)
+// 	}
+// 	return
+// }
+
+//Digits returns an array of digits of [n]
 func Digits(n int) (res []int) {
-	numStr := strconv.Itoa(n)
-	for _, i := range numStr {
-		k, _ := strconv.Atoi(string(i))
-		res = append(res, k)
+	temp := n
+	for temp > 0 {
+		res = append(res, temp%10)
+		temp /= 10
+	}
+
+	for i, j := 0, len(res)-1; i < j; i, j = i+1, j-1 {
+		res[i], res[j] = res[j], res[i]
 	}
 	return
 }
