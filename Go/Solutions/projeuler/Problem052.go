@@ -2,7 +2,6 @@ package euler
 
 import (
 	"fmt"
-	"sort"
 	"time"
 )
 
@@ -26,24 +25,4 @@ func Problem052() {
 	end := time.Now()
 	fmt.Printf("\nAnswer to Problem 52 : %d\n", i)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
-}
-
-func sameDigits(a int, b int) bool {
-	a1 := Digits(a)
-	b1 := Digits(b)
-
-	if len(a1) != len(b1) {
-		return false
-	}
-
-	sort.Ints(a1[:])
-	sort.Ints(b1[:])
-
-	for i := 0; i < len(a1); i++ {
-		if a1[i] != b1[i] {
-			return false
-		}
-
-	}
-	return true
 }

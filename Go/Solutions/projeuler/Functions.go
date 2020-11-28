@@ -798,3 +798,24 @@ func pNum(n int64) int64 {
 func hNum(n int64) int64 {
 	return n * (2*n - 1)
 }
+
+/* Checks if 2 numbers have the same digits (used in problem 52) */
+func sameDigits(a int, b int) bool {
+	a1 := Digits(a)
+	b1 := Digits(b)
+
+	if len(a1) != len(b1) {
+		return false
+	}
+
+	sort.Ints(a1[:])
+	sort.Ints(b1[:])
+
+	for i := 0; i < len(a1); i++ {
+		if a1[i] != b1[i] {
+			return false
+		}
+
+	}
+	return true
+}
