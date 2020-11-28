@@ -26,6 +26,6 @@ func Problem048() {
 	ans.Mod(ans, big.NewInt(10000000000))
 
 	end := time.Now()
-	fmt.Printf("\nAnswer to Problem 42 : %d\n", ans)
+	fmt.Printf("\nAnswer to Problem 48 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }

@@ -819,3 +819,11 @@ func sameDigits(a int, b int) bool {
 	}
 	return true
 }
+
+//C reports the number of combinations i.e. nCr
+func C(n, r int) *big.Int {
+	t1, t2, t3 := Factorial(int64(n)), Factorial(int64(r)), Factorial(int64(n-r))
+	t2.Mul(t2, t3)
+	res := t1.Div(t1, t2)
+	return res
+}
