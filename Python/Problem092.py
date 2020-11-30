@@ -25,12 +25,10 @@ for i in range(1, 10):
     counter = int(fact(len(numRef[:i])+i-1) / fact(i) / fact(len(numRef[:i])-1)) * len(numRef[:i])
     
 # ans = sum(map(lambda x: fact(len(str(x))), filter(checkChain, combLis)))
-# # (n+r-1)! / r! / (n-1)!
+# # (n+r-1)! / r! / (n-1)! needs work ...
 
 if __name__ == '__main__':
     print(f"Answer: { counter }")
     print(f"Time Taken: { time() - start }")
 
 # 8581146
-# 469804167
-# 538063582

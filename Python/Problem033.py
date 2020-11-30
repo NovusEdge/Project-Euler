@@ -11,8 +11,6 @@ def cut(a, b):
     return int(''.join(a1)),int(''.join(b1))
 
 
-
-
 def check(a, b):
     if a%10 == 0 and b%10 == 0 or a == b:
         return False
