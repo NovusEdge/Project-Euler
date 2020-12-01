@@ -2,8 +2,7 @@ from math import floor, sqrt
 from time import time
 
 
-def isTriplet(a, b, c): return a < b < c and a**2 + \
-    b**2 == c**2 and a+b+c == 1000
+def isTriplet(a, b, c): return a < b < c and a**2 + b**2 == c**2 and a+b+c == 1000
 
 
 def main():
