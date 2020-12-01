@@ -2,7 +2,7 @@ from time import time
 from math import gcd
 from functools import reduce
 
-lcm = lambda a, b: a*b//gcd(a, b)
+lcm = lambda a, b: a*b // gcd(a, b)
 
 start = time()
 ans = reduce(lcm, range(1, 21))
