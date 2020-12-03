@@ -1,8 +1,8 @@
 from time import time
 
 start = time()
-sqSum = lambda n: sum([i**2 for i in range(n+1)])
-sumSq = lambda n: sum(range(n+1))**2
+sqSum = lambda n: int(n * (n+1) * (2*n + 1) / 6)
+sumSq = lambda n: int(n * (n+1) / 2) ** 2
 
 ans = sumSq(100) - sqSum(100)
 
