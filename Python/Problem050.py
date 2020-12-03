@@ -1,6 +1,19 @@
 from time import time
 from math import sqrt; from itertools import count, islice
 
+''' 
+Problem 50: https://projecteuler.net/problem=50
+
+The prime 41, can be written as the sum of six consecutive primes:
+                    41 = 2 + 3 + 5 + 7 + 11 + 13
+
+This is the longest sum of consecutive primes that adds to a prime below one-hundred.
+
+The longest sum of consecutive primes below one-thousand that adds to a prime, contains 21 terms, and is equal to 953.
+
+Which prime, below one-million, can be written as the sum of the most consecutive primes?
+'''
+
 def prime(n):
     return n > 1 and all(n%i for i in islice(count(2), int(sqrt(n)-1)))
 
@@ -24,6 +37,3 @@ for i in range(1, len(pSieve)):
 if __name__ == '__main__':
     print(f"\nAnswer: { ans }")
     print(f"Time Taken: { time() - start }\n")
-
-# 997651
-# 958577
