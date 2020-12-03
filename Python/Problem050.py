@@ -24,6 +24,3 @@ for i in range(1, len(pSieve)):
 if __name__ == '__main__':
     print(f"\nAnswer: { ans }")
     print(f"Time Taken: { time() - start }\n")
-
-# 997651
-# 958577
