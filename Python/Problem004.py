@@ -1,5 +1,13 @@
 from time import time
 
+''' 
+Problem 4: https://projecteuler.net/problem=4
+
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+'''
+
 isPall = lambda s : str(s)==str(s)[::-1]
 palls = []
 start = time()

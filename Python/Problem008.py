@@ -1,5 +1,11 @@
 from time import time
 
+''' 
+Problem 8: https://projecteuler.net/problem=8
+
+Find the thirteen adjacent digits in the given 1000-digit number that have the greatest product. What is the value of this product?
+'''
+
 start = time()
 
 num = ''.join('''73167176531330624919225119674426574742355349194934

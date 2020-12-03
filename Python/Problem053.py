@@ -1,6 +1,15 @@
 from math import factorial
 from time import time
 
+''' 
+Problem 53: https://projecteuler.net/problem=53
+
+There are exactly ten ways of selecting three from five, 12345:
+        123, 124, 125, 134, 135, 145, 234, 235, 245, and 345
+
+How many, not necessarily distinct, values of C(n, r) for, 1 ≤ n ≤ 100 are greater than one-million?
+'''
+
 C = lambda n, r: factorial(n) // (factorial(n-r) * factorial(r))
 
 def main():
