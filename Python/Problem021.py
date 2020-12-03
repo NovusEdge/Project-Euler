@@ -18,5 +18,5 @@ def main():
 
 if __name__ == "__main__":
   start = time()
-  print(f"Answer : { main() }")
-  print(f"Time Taken : { time() - start }")
+  print(f"\nAnswer : { main() }")
+  print(f"Time Taken : { time() - start }\n")

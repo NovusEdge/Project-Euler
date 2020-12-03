@@ -23,5 +23,5 @@ for i in range(1001):
 
 
 if __name__ == '__main__':
-    print(f"Answer: { pFlag }")
-    print(f"Time Taken: { time() - start }") 
+    print(f"\nAnswer: { pFlag }")
+    print(f"Time Taken: { time() - start }\n") 
