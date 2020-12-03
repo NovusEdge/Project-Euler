@@ -13,10 +13,17 @@ def primeSieve(n):
 
 
 start = time() 
-ans = 0
 pSieve = primeSieve(1000000)
+ans = 0
 
+for i in range(1, len(pSieve)):
+    k = sum(pSieve[:i+1])
+    if k >= 1000000: break
+    if prime(k): ans = k
 
 if __name__ == '__main__':
     print(f"\nAnswer: { ans }")
     print(f"Time Taken: { time() - start }\n")
+
+# 997651
+# 958577
