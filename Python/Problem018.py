@@ -1,9 +1,6 @@
 from time import time
 
-start = time()
-ans = 0
-
-triangle = list(map(lambda x: list(map(int, x.split(' '))),'''75
+triangle = '''75
 95 64
 17 47 82
 18 35 87 10
@@ -17,14 +14,18 @@ triangle = list(map(lambda x: list(map(int, x.split(' '))),'''75
 70 11 33 28 77 73 17 78 39 68 17 57
 91 71 52 38 17 14 91 43 58 50 27 29 48
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
-04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''.split('\n')))[::-1]
+04 62 98 27 23 09 70 98 73 93 38 53 60 04 23'''
 
-end = len(triangle[0])-1
-begin = 0
-mid = (len(triangle) // 2) + 1
+start = time()
 
+triangle = list(map(lambda x: x.split(' '), triangle.split('\n')))
+triangle = [list(map(int, i)) for i in triangle]
 
-
+for i in range(len( triangle )-1)[::-1]:
+    for j in range(len(triangle[i])):
+        triangle[i][j] += max( triangle[i + 1][j], triangle[i + 1][j + 1] )
+        
+ans = triangle[0][0]
 
 if __name__ == '__main__':
     print(f"Answer:{ ans }")
