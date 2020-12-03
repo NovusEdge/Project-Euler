@@ -49,7 +49,7 @@ import (
 )
 
 /*
-Problem discription with link to the it.
+Problem discription with link to it.
 */
 func Problem...(){
     vars ...
