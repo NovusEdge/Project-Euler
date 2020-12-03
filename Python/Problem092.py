@@ -28,7 +28,7 @@ for i in range(1, 10):
 # # (n+r-1)! / r! / (n-1)! needs work ...
 
 if __name__ == '__main__':
-    print(f"Answer: { counter }")
-    print(f"Time Taken: { time() - start }")
+    print(f"\nAnswer: { counter }")
+    print(f"Time Taken: { time() - start }\n")
 
 # 8581146

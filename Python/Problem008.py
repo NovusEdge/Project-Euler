@@ -31,5 +31,5 @@ for i in range(0, len(num)-13):
         ans = digitProd(num[i:i+13])
 
 if __name__ == '__main__':
-    print(f"Answer: { ans }")
-    print(f"Time Taken: { time() - start }")
+    print(f"\nAnswer: { ans }")
+    print(f"Time Taken: { time() - start }\n")

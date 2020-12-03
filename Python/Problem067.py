@@ -16,5 +16,5 @@ for i in range(len( triangle )-1)[::-1]:
 ans = triangle[0][0]
 
 if __name__ == '__main__':
-    print(f"Answer:{ ans }")
-    print(f"Time Taken:{ time() - start }")
+    print(f"\nAnswer:{ ans }")
+    print(f"Time Taken:{ time() - start }\n")
