@@ -39,25 +39,3 @@ func Problem055() {
 	fmt.Printf("\nAnswer to Problem 53 : %d\n", ans)
 	fmt.Printf("Time Taken: %f seconds\n\n", end.Sub(start).Seconds())
 }
-
-func isLychrel(n int) bool {
-	temp := n
-	for i := 0; i < 50; i++ {
-		temp += reverseNum(temp, 0)
-		if IsPall(temp) {
-			return false
-		}
-	}
-	return true
-}
-
-func reverseNum(n int, res int) int {
-	if n != 0 {
-		res = res * 10
-		res = res + n%10
-		n = n / 10
-	} else {
-		return res
-	}
-	return reverseNum(n, res)
-}
