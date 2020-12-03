@@ -25,6 +25,10 @@ This reporsitory was created (initially) in light of the ProjectEuler100 challan
 from time import time
 ... #importing libs
 
+'''
+Problem discription.
+'''
+
 start = time() # to keep timestamp of when the processes started
 
 ...
@@ -49,7 +53,7 @@ import (
 )
 
 /*
-Problem discription with link to it.
+Problem discription.
 */
 func Problem...(){
     vars ...
