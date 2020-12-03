@@ -1,17 +1,16 @@
 from time import time
+from functools import lru_cache
 
-''' 
-21 22 23 24 25
-20  7  8  9 10
-19  6  1  2 11
-18  5  4  3 12
-17 16 15 14 13
-'''
+@lru_cache
+def getSpiralSum( n ):
+    if n == 1 or n == 0: return n
+    if n == 3: return 25
+    if n == 5: return 61
+    
+    return 4*(2*n + 1)**2 - (12*n) + getSpiralSum(n - 1)
 
 start = time()
-ans = 0
-
-# needs work
+ans = getSpiralSum(500)
 
 if __name__=="__main__":
     print(f"\nAnswer: { ans }")
