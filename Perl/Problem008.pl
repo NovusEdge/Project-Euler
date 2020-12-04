@@ -18,5 +18,5 @@ for(my $i = 0; $i < 987; $i++){
 }
 
 $exc_time = time() - $start;
-print "Answer: $ans\n";
-print "Time Taken: $exc_time seconds\n";
+print "\nAnswer: $ans\n";
+print "Time Taken: $exc_time seconds\n\n";

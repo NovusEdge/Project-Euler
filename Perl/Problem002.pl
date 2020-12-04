@@ -20,8 +20,8 @@ while ($k < 4000000){
 }
 
 $exc_time = time() - $start;
-print "Answer: $ans\n";
-print "Time Taken: $exc_time seconds\n";
+print "\nAnswer: $ans\n";
+print "Time Taken: $exc_time seconds\n\n";
 
 # just for reference -_-
 # sub fibonacci {
