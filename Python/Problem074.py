@@ -40,17 +40,14 @@ def check_chain(n):
         if list(dict.fromkeys(refLis)) != refLis:
             return counter 
 
+start = time()
+counter = 0
 
-def main():
-    counter = 0
-    for i in range(1, 10**6 + 1):
-        if check_chain(i) == 60:
-            counter += 1
-    return counter
-
-
+for i in range(1, 10**6 + 1):
+    if check_chain(i) == 60:
+        counter += 1
+        
 if __name__=="__main__":
-    start = time()
-    print(f"\nAnswer: { main() }")
+    print(f"\nAnswer: { counter }")
     print(f"Time Taken: { time() - start }\n")
 

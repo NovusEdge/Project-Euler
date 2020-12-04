@@ -17,9 +17,8 @@ What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed 
 '''
 
 def getSpiralSum( n ):
-    if n == 0: return 1
-    if n == 1: return 25
-    if n == 2: return 101
+    if n == 2:
+        return 101
     
     return 4*(2*n + 1)**2 - (12*n) + getSpiralSum(n - 1)
 

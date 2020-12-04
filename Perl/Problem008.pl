@@ -1,4 +1,3 @@
-
 sub digitProd {
     my @n = split("", @_[0]); my $res = 1;
     foreach ( @n ){
@@ -11,8 +10,8 @@ sub digitProd {
 
 $start = time(); $ans = 0;
 
-for(my $i = 0; $i < 1000; $i++){
-    my $temp = @num[$i..($i+13)];
+for(my $i = 0; $i < 987; $i++){
+    my $temp = join ("", @num[$i..($i+12)]);
     if ($ans < digitProd($temp)){
         $ans = digitProd($temp);
     }
