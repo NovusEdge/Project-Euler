@@ -11,9 +11,7 @@ func main() {
 	// euler.Problem005()
 	// euler.Problem006()
 	// euler.Problem007()
-
-	// //TODO Solve problem 8 ...
-
+	// euler.Problem008()
 	// euler.Problem009()
 	// euler.Problem010()
 	// euler.Problem012()
