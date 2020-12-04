@@ -11,5 +11,5 @@ sub sumSquare {
 $start = time();
 $ans = squareSum(100) - sumSquare(100);
 $exc_time = time() - $start;
-print "Answer: $ans\n";
-print "Time Taken: $exc_time seconds\n";
+print "\nAnswer: $ans\n";
+print "Time Taken: $exc_time seconds\n\n";

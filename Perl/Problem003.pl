@@ -29,5 +29,5 @@ $start = time();
 $ans = max(primeFactors(600851475143));
 $exc_time = time() - $start;
 
-print "Answer: $ans\n";
-print "Time Taken: $exc_time seconds\n";
+print "\nAnswer: $ans\n";
+print "Time Taken: $exc_time seconds\n\n";

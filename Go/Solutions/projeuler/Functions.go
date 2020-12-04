@@ -827,3 +827,27 @@ func C(n, r int) *big.Int {
 	res := t1.Div(t1, t2)
 	return res
 }
+
+// reports if a number is a lycrel number (used in problem 55)
+func isLychrel(n int) bool {
+	temp := n
+	for i := 0; i < 50; i++ {
+		temp += reverseNum(temp, 0)
+		if IsPall(temp) {
+			return false
+		}
+	}
+	return true
+}
+
+// reverses a number (problem 55)
+func reverseNum(n int, res int) int {
+	if n != 0 {
+		res = res * 10
+		res = res + n%10
+		n = n / 10
+	} else {
+		return res
+	}
+	return reverseNum(n, res)
+}

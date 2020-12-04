@@ -36,8 +36,8 @@ start = time() # to keep timestamp of when the processes started
 ...
 
 if __main__ == "__name__":
-    print(f"Answer: { ans }")
-    print(f"Time Taken: { time() - start }")
+    print(f"\nAnswer: { ans }")
+    print(f"Time Taken: { time() - start }\n")
 ```
 
 * Back To Contents: [Contents](#contents)
@@ -85,8 +85,8 @@ $start = time(); # timestamp of when the processes started...
 ...
 
 $exc_time = time() - $start;
-print "Answer: $answer_var\n";
-print "Time Taken: $exc_time\n";
+print "\nAnswer: $answer_var\n";
+print "Time Taken: $exc_time\n\n";
 ```
 * Back To Contents: [Contents](#contents)
 * Back to index: [Index](#index)
