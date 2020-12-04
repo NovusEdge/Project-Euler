@@ -49,7 +49,7 @@ triangle = '''75
 
 start = time()
 
-triangle = list(map(lambda x: x.split(' '), triangle.split('\n')))
+triangle = list(map(str.split, triangle.split('\n')))
 triangle = [list(map(int, i)) for i in triangle]
 
 for i in range(len( triangle )-1)[::-1]:
@@ -59,5 +59,5 @@ for i in range(len( triangle )-1)[::-1]:
 ans = triangle[0][0]
 
 if __name__ == '__main__':
-    print(f"\nAnswer:{ ans }")
-    print(f"Time Taken:{ time() - start }\n")
+    print(f"\nAnswer: { ans }")
+    print(f"Time Taken: { time() - start }\n")
