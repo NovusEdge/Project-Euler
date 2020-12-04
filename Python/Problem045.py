@@ -13,16 +13,16 @@ It can be verified that T(285) = P(165) = H(143) = 40755.
 Find the next triangle number that is also pentagonal and hexagonal.
 '''
 
-def main():
-     T = lambda n: n * (n + 1) // 2
-     P = lambda n: n * (3 * n - 1) // 2
-     H = lambda n: n * (2 * n - 1)
-     t = set(T(i) for i in range(100000))
-     p = set(P(i) for i in range(100000))
-     h = set(H(i) for i in range(100000))
-     k = t.intersection(p)
-     return list(k.intersection(h))[3]
+T = lambda n: n * (n + 1) // 2
+P = lambda n: n * (3 * n - 1) // 2
+H = lambda n: n * (2 * n - 1)
 
+def main():
+     t_Set = set(T(i) for i in range(100000))
+     p_Set = set(P(i) for i in range(100000))
+     h_Set = set(H(i) for i in range(100000))
+     
+     return list(t_Set.intersection(p_Set).intersection(h_Set))[3]
 
 if __name__=="__main__":    
      start = time()
