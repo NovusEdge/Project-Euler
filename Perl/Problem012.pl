@@ -1,4 +1,3 @@
-
 sub T { @_[0] * ( @_[0]+1 ) / 2 }
 
 
@@ -14,8 +13,7 @@ sub Factors {
 sub main() {
     my $i = 1;
     while (1) {
-        $temp = Factors(T($i)) - 1;
-        if ($temp > 500){
+        if (scalar(Factors(T($i))-1) > 500){
             return T($i);
         }
         $i++;
