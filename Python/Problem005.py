@@ -1,5 +1,5 @@
 from time import time
-from math import gcd
+from math import lcm
 from functools import reduce
 
 ''' 
@@ -9,8 +9,6 @@ Problem 5: https://projecteuler.net/problem=5
 
 What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
 '''
-
-lcm = lambda a, b: a*b // gcd(a, b)
 
 start = time()
 ans = reduce(lcm, range(1, 21))
