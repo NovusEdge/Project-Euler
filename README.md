@@ -18,7 +18,7 @@ This reporsitory was created (initially) in light of the ProjectEuler100 challan
   - [Python](#python)
   - [Go](#go)
   - [Perl](#perl)
-  - [C](#c)
+  - [C++](#c++)
 
 #### Python:
 * Most of the `python` code is written in a format similar to the following:
@@ -87,10 +87,10 @@ print "Time Taken: $exc_time\n\n";
 ```
 * Back To Contents: [Contents](#contents)
 
-#### C:
-* Most of the `C` code is written in a format similar to the following:
-```C
-#include <time.h>
+#### C++:
+* Most of the `C++` code is written in a format similar to the following:
+```C++
+#include "time.h"
 ...
 
 // function declarations ...
