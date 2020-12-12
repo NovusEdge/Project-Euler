@@ -55,5 +55,6 @@ func main() {
 	// euler.Problem048()
 	// euler.Problem052()
 	// euler.Problem053()
-	euler.Problem055()
+	// euler.Problem055()
+	euler.Problem056()
 }
