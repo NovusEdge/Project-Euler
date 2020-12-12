@@ -11,7 +11,7 @@ int main() {
     time_t start = time(NULL);
 
     printf("\nAnswer: %d\n", Problem003());
-    printf("Time Taken: %ld seconds\n\n", time(NULL) - start); // needs work (segfault)
+    printf("Time Taken: %ld seconds\n\n", time(NULL) - start);
 
     return 0;
 }
@@ -19,11 +19,14 @@ int main() {
 int Problem003(){
     std::vector<int> primeFactors;
     primeFactors = factors(600851475143);
+    int flag = 0;
     
     for(auto it = primeFactors.begin(); it != primeFactors.end(); ++it) {
-        if (!isPrime(*it)){ primeFactors.erase(it); }
+        if (flag < *it && isPrime(*it)){
+            flag = *it;
+        }
     }
-    return int(*std::max_element(std::begin(primeFactors), std::end(primeFactors)));
+    return flag;
 }
 
 bool isPrime(int n){
