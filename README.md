@@ -88,9 +88,9 @@ print "Time Taken: $exc_time\n\n";
 * Back To Contents: [Contents](#contents)
 
 #### C:
-* Most of the `C` code is written in a format similar to the following:
-```C
-#include <time.h>
+* Most of the `C++` code is written in a format similar to the following:
+```C++
+#include "time.h"
 ...
 
 // function declarations ...
