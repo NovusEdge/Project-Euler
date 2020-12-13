@@ -90,20 +90,27 @@ print "Time Taken: $exc_time\n\n";
 #### C++:
 * Most of the `C++` code is written in a format similar to the following:
 ```C++
-#include "time.h"
+#include "iostream"
 ...
 
+int Problem...();
 // function declarations ...
 
 int main() {
-    time_t start = time(NULL);
+    clock_t start; 
+    start = std::clock();
+    int ans = Problem...();
+    double time_taken = double(clock() - start) / double(CLOCKS_PER_SEC); 
 
-    printf("\nAnswer: %d\n", Problem...());
-    printf("Time Taken: %ld seconds\n\n", time(NULL) - start);
+    printf("\nAnswer: %d\n", ans);
+    printf("Time Taken: %f seconds\n\n", time_taken); 
     
     return 0;
 }
 
+int Problem...(){
+    ...
+}
 // function definitions :
 ...
 ``` 

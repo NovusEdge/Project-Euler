@@ -1,18 +1,23 @@
-#include <stdio.h>
-#include <time.h>
+#include "iostream"
+
 int Problem001();
 
 int main() {
-    time_t start = time(NULL);
+    clock_t start; 
+    start = std::clock();
+    int ans = Problem001();
+    double time_taken = double(clock() - start) / double(CLOCKS_PER_SEC); 
 
-    printf("\nAnswer: %d\n", Problem001());
-    printf("Time Taken: %ld seconds\n\n", time(NULL) - start);
-    
+    printf("\nAnswer: %d\n", ans);
+    printf("Time Taken: %f seconds\n\n", time_taken);
+
     return 0;
 }
 
 int Problem001(){
     int ans = 0;
+
     for (int i = 0; i < 1000; i++) { if (i % 3 == 0 || i % 5 == 0){ ans += i; } }
+
     return ans;
 }
