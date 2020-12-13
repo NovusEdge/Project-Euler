@@ -20,10 +20,9 @@ func Problem057() {
 	n, a, ans := 3, 2, 0
 
 	for i := 2; i < 1001; i++ {
-		a = n + a
-		n = n + 2*a
+		n, a = n+2*a, n+a
 
-		if math.Log2(float64(n)) > math.Log2(float64(a)) { // needs work -_-
+		if math.Log10(float64(n))/math.Log10(float64(a)) > 1 { // needs work -_-
 			ans++
 		}
 
