@@ -1,6 +1,5 @@
 #include "iostream"
 #include "vector"
-#include "time.h"
 #include "math.h"
 
 int Problem003();
@@ -8,10 +7,13 @@ std::vector<int> factors(long n);
 bool isPrime(int n);
 
 int main() {
-    time_t start = time(NULL);
+    clock_t start; 
+    start = std::clock();
+    int ans = Problem003();
+    double time_taken = double(clock() - start) / double(CLOCKS_PER_SEC); 
 
-    printf("\nAnswer: %d\n", Problem003());
-    printf("Time Taken: %ld seconds\n\n", time(NULL) - start);
+    printf("\nAnswer: %d\n", ans);
+    printf("Time Taken: %f seconds\n\n", time_taken);
 
     return 0;
 }
@@ -21,7 +23,7 @@ int Problem003(){
     primeFactors = factors(600851475143);
     int flag = 0;
     
-    for(auto it = primeFactors.begin(); it != primeFactors.end(); ++it) {
+    for(std::vector<int>::iterator it = primeFactors.begin(); it != primeFactors.end(); ++it) {
         if (flag < *it && isPrime(*it)){
             flag = *it;
         }
@@ -51,6 +53,5 @@ std::vector<int> factors(long int n){
             factList.push_back(int(n/i));
         }
     }
-    
     return factList;
 }

@@ -1,15 +1,17 @@
 #include "iostream"
-#include "time.h"
 
 int fibb(int n);
 int Problem002();
 
 int main() {
-    time_t start = time(NULL);
+    clock_t start; 
+    start = std::clock();
+    int ans = Problem002();
+    double time_taken = double(clock() - start) / double(CLOCKS_PER_SEC); 
 
-    printf("\nAnswer: %d\n", Problem002());
-    printf("Time Taken: %ld seconds\n\n", time(NULL) - start);
-    
+    printf("\nAnswer: %d\n", ans);
+    printf("Time Taken: %f seconds\n\n", time_taken);
+
     return 0;
 }
 
