@@ -18,7 +18,7 @@ This reporsitory was created (initially) in light of the ProjectEuler100 challan
   - [Python](#python)
   - [Go](#go)
   - [Perl](#perl)
-  - [C++](#c++)
+  - [C++](#c)
 
 #### Python:
 * Most of the `python` code is written in a format similar to the following:
