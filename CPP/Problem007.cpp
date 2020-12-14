@@ -27,7 +27,7 @@ Problem007 answers the problem at : https://projecteuler.net/problem=7
 */
 int Problem007(){
     std::vector<int> primes = primeSieve(1000000);
-    int res = primes[10001];
+    int res = primes[10000];
     return res;
 }
 
@@ -56,6 +56,7 @@ std::vector<int> primeSieve(int n){
             result.push_back(i);
         }
     }
+
     return result; 
 }
 
