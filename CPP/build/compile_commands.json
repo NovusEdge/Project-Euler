@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/alexprior/Desktop/Codes/ProjectEuler100/CPP/build",
+  "command": "/usr/bin/clang++  -DBOOST_ALL_NO_LIB -isystem /usr/local/include  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk -mmacosx-version-min=10.15   -std=gnu++14 -o CMakeFiles/euler.dir/main.cpp.o -c /Users/alexprior/Desktop/Codes/ProjectEuler100/CPP/main.cpp",
+  "file": "/Users/alexprior/Desktop/Codes/ProjectEuler100/CPP/main.cpp"
+}
+]

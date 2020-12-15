@@ -10,8 +10,8 @@ In the first one-thousand expansions, how many fractions contain a numerator wit
 '''
 
 def main():
-    Ln, n, a, b = 1000, 3, 2, 0
-    for i in range(2, Ln+1):
+    n, a, b = 3, 2, 0
+    for i in range(2, 1001):
         n, a = n + 2*a, n + a
         if int(log10(n)) > int(log10(a)): 
             b += 1
