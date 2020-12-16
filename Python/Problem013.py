@@ -112,5 +112,3 @@ ans = str(sum(map(int, nums)))[:10]
 if __name__ == '__main__':
     print(f"\nAnswer: { ans }")
     print(f"Time Taken: { time() - start }\n")
-
-
